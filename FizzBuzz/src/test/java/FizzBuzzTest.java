@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FizzBuzzTest {
@@ -24,7 +23,7 @@ class FizzBuzzTest {
 
     @Test
     void shouldReturnFizzIfNumIsThree() {
-        assertEquals("Fizz", input(3));
+        assertEquals("Small Fizz", input(3));
     }
 
     @Test
@@ -55,8 +54,8 @@ class FizzBuzzTest {
     // 3&5 done at this point.. now "fooboo"
 
     @Test
-    void shouldReturnFooIfNumIsSeven() {
-        assertEquals("Foo", input(7));
+    void shouldReturnSmallFooIfNumIsSeven() {
+        assertEquals("Small Foo", input(7));
     }
 
     @Test

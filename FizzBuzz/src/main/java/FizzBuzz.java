@@ -1,10 +1,10 @@
 public class FizzBuzz {
 
+    // No statics or public variables ust for pat :)
     public String input(int num){ // Checks a singular number..
         String output;
         if (num != 0 && num != 1) {
-            output = checkNumber(num);
-            //System.out.print(num);
+            output = checkNumber(num); // Need to clean this part up
             inputNums(2, 100);
             return output;
         } else if (num == 1) {
@@ -13,12 +13,11 @@ public class FizzBuzz {
         return String.valueOf(num);
     }
 
-    public Object inputNums(int min, int max){ // Checks range of numbers
+    public void inputNums(int min, int max){ // Checks range of numbers
         for(int i = min; i < max; i++) {
             String output = checkNumber(i);
             System.out.print(output + ", ");
         }
-        return null;
     }
 
     public String checkNumber(int num){
@@ -41,35 +40,23 @@ public class FizzBuzz {
         }else if(isMultipleOfSeven(num)){
             return prefix +"Foo";
         }
-        return prefix + String.valueOf(num);
+        return prefix + num;
     }
 
     public boolean isMultipleOfThree(int num){
-        if(num % 3 == 0 || num == 1){ // Modulo operator used: https://en.wikipedia.org/wiki/Modulo_operation
-            return true;
-        }
-        return false;
+        // Modulo operator used: https://en.wikipedia.org/wiki/Modulo_operation
+        return num % 3 == 0;
     }
 
     public boolean isMultipleOfFive(int num){
-        if(num % 5 == 0 || num == 1){ // Modulo operator used: https://en.wikipedia.org/wiki/Modulo_operation
-            return true;
-        }
-        return false;
+        return num % 5 == 0;
     }
 
     public boolean isMultipleOfSeven(int num){
-        if(num % 7 == 0 || num == 1){ // Modulo operator used: https://en.wikipedia.org/wiki/Modulo_operation
-            return true;
-        }
-        return false;
+        return num % 7 == 0;
     }
 
     public boolean isMultipleOfEleven(int num){
-        if(num % 11 == 0 || num == 1){ // Modulo operator used: https://en.wikipedia.org/wiki/Modulo_operation
-            return true;
-        }
-        return false;
+        return num % 11 == 0;
     }
-
 }
