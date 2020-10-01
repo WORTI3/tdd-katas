@@ -38,7 +38,7 @@ public class BowlingGameTest {
     }
 
     @Test
-    public void shouldReturn300IfAllStrikes(){
+    public void shouldReturn300IfAllStrikes() throws Exception {
         init();
         game.roll(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10);
         assertEquals(300, game.score());
