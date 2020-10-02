@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PrimeFactors {
 
-    public static List<Integer> generate(int input){
+    public List<Integer> generate(int input){
         //int[] primeNumbers = new int[];
         List<Integer> primeNumbers = new ArrayList<Integer>();
         int divider = 2;

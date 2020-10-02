@@ -6,7 +6,7 @@ public class FizzBuzz {
     // No statics or public variables just for pat :)
     public List<String> execute(int min, int max){ // Checks range of numbers
         List<String> output = new ArrayList<String>();
-        for(int i = min; i <= max; i++) {
+        for (int i = min; i <= max; i++) {
             output.add(String.valueOf(checkNumber(i)));
         }
         System.out.println(output);

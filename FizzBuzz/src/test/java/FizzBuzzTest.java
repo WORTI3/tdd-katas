@@ -85,4 +85,6 @@ class FizzBuzzTest {
     void multiplesOf3Or5ShouldReturnGG(){
         assertThat(input(6), containsString("GG"));
     }
+
+
 }

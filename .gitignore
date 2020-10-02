@@ -4,7 +4,9 @@
 *.log
 .greeter/
 .StringCalculator/
-PrimeFactors/
+.BowlingGame/
+
+#PrimeFactors/
  
 ##########################
 ## Java

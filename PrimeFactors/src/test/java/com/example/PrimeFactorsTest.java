@@ -4,11 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.PrimeFactors.generate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PrimeFactorsTest {
+
+    public List<Integer> generate(int num){
+        return new PrimeFactors().generate(num);
+    }
 
     private List<Integer> list(int... numbers){
         List<Integer> list = new ArrayList<Integer>();
@@ -22,7 +24,7 @@ class PrimeFactorsTest {
     }
 
     @Test
-    public void shouldReturnTwoIfInputIsTwo() throws Exception {
+    public void shouldReturnTwoIfInputIsTwo() {
         assertEquals(list(2), generate(2));
     }
 
