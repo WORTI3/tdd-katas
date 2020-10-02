@@ -1,40 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class FizzBuzz {
 
-    // No statics or public variables ust for pat :)
-    public String input(int num){ // Checks a singular number..
-        String output;
-        if (num != 0 && num != 1) {
-            output = checkNumber(num); // Need to clean this part up
-            inputNums(2, 100);
-            return output;
-        } else if (num == 1) {
-            return "1 Is a multiple of each: 3,5,7 and 11";
+    // No statics or public variables just for pat :)
+    public List<String> execute(int min, int max){ // Checks range of numbers
+        List<String> output = new ArrayList<String>();
+        for(int i = min; i <= max; i++) {
+            output.add(String.valueOf(checkNumber(i)));
         }
-        return String.valueOf(num);
-    }
-
-    public void inputNums(int min, int max){ // Checks range of numbers
-        for(int i = min; i < max; i++) {
-            String output = checkNumber(i);
-            System.out.print(output + ", ");
-        }
+        System.out.println(output);
+        return output;
     }
 
     public String checkNumber(int num){
         String prefix = "";
         if(num < 16){
             prefix = "Small ";
-        }else if(num > 94){
+        }else if(num > 95){
             prefix = "Big ";
         }
         if(isMultipleOfThree(num) && isMultipleOfFive(num)){ // Could use a switch here..
-            return prefix + "FizzBuzz";
+            return prefix + "FizzBuzz"+" FTW";
         }else if(isMultipleOfSeven(num) && isMultipleOfEleven(num)){ // Could use a switch here..
             return prefix + "FooBoo";
         }else if(isMultipleOfFive(num)) {
-            return prefix + "Buzz";
+            return prefix + "Buzz"+" GG";
         }else if(isMultipleOfThree(num)){
-            return prefix +"Fizz";
+            return prefix +"Fizz"+" GG";
         }else if(isMultipleOfEleven(num)){
             return prefix +"Boo";
         }else if(isMultipleOfSeven(num)){

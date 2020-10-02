@@ -1,75 +1,88 @@
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 
 class FizzBuzzTest {
 
-    public Object input(int num){ // Used to avoid using statics in main class file.. :)
-        return new FizzBuzz().input(num);
+    public String input(int num){ // Used to avoid using statics in main class file.. :)
+        return new FizzBuzz().execute(num, num).get(0);
     }
 
-    public void inputNums(int min, int max){ // Used to avoid using statics in main class file.. :)
-        new FizzBuzz().inputNums(min, max);
-    }
-
-    @Test
-    public void shouldReturnZeroIfNumIsZero() {
-        assertEquals("0", input(0));
+    public String input(int min, int max){
+        return new FizzBuzz().execute(min, max).get(0);
     }
 
     @Test
     void shouldReturnOneIfOneIsInput() {
-        assertEquals("1 Is a multiple of each: 3,5,7 and 11", input(1));
+        assertThat(input(1), containsString("1"));
     }
 
     @Test
     void shouldReturnFizzIfNumIsThree() {
-        assertEquals("Small Fizz", input(3));
+        assertThat(input(3), containsString("Fizz"));
     }
 
     @Test
     void shouldReturnBuzzIfNumIsFive() {
-        assertEquals("Buzz", input(5));
+        assertThat(input(5), containsString("Buzz"));
     }
 
     @Test
     void shouldReturnFizzIfNumIsSix() {
-        assertEquals("Fizz", input(6));
+        assertThat(input(6), containsString("Fizz"));
     }
 
     @Test
     void shouldReturnFizzIfNumIsTen() {
-        assertEquals("Buzz", input(10));
-    }
-
-    @Test
-    void shouldReturnFizzBuzzIfNumIsOne() {
-        assertEquals("FizzBuzz", input(1));
+        assertThat(input(10), containsString("Buzz"));
     }
 
     @Test
     void shouldReturnFizzBuzzIfNumIsFifteen() {
-        assertEquals("FizzBuzz", input(15));
+        assertThat(input(15), containsString("FizzBuzz"));
     }
 
     // 3&5 done at this point.. now "fooboo"
 
     @Test
     void shouldReturnSmallFooIfNumIsSeven() {
-        assertEquals("Small Foo", input(7));
+        assertThat(input(7), containsString("Foo"));
     }
 
     @Test
     void shouldReturnSmallBooIfNumIsEleven() {
-        assertEquals("Small Boo", input(11));
+        assertThat(input(11), containsString("Boo"));
     }
 
     @Test
     void shouldReturnFooBooIfNumIs77() {
-        assertEquals("FooBoo", input(77));
+        assertThat(input(77), containsString("FooBoo"));
     }
 
     @Test
-    void shouldPrintAllNumbersWithinTwoAndOneHundred() {
-        inputNums(2, 100);
+    void checkToSeeChangeInRangeWorks(){
+        assertThat(input(1, 20), containsString("Small"));
+    }
+
+    @Test
+    void checkToSeeBigTagInRange(){
+        assertThat(input(96, 100), containsString("Big"));
+    }
+
+    @Test
+    void checkToSeeChangeInRangeWorksSecondTest(){
+        assertThat(input(15, 50), containsString("Buzz"));
+    }
+
+    @Test
+    void multiplesOf3And5ShouldReturnFTW(){
+        assertThat(input(15), containsString("FTW"));
+    }
+
+    @Test
+    void multiplesOf3Or5ShouldReturnGG(){
+        assertThat(input(6), containsString("GG"));
     }
 }

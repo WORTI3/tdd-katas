@@ -3,6 +3,7 @@
 ##########################
 *.log
 .greeter/
+.StringCalculator/
 PrimeFactors/
  
 ##########################
