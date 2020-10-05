@@ -9,32 +9,32 @@ class StringCalculatorTest {
     }
 
     @Test
-    public void shouldReturnZeroOnEmptyString() {
+    void shouldReturnZeroOnEmptyString() {
         assertEquals(0, add(""));
     }
 
     @Test
-    public void shouldReturnSingleNumberOnInput() {
+    void shouldReturnSingleNumberOnInput() {
         assertEquals(1, add("1"));
     }
 
     @Test
-    public void shouldReturnSumOfTwoNumbersDelimitedByAComma(){
+    void shouldReturnSumOfTwoNumbersDelimitedByAComma(){
         assertEquals(3, add("1,2"));
     }
 
     @Test
-    public void shouldReturnSumOfMultipleNumbers() {
+    void shouldReturnSumOfMultipleNumbers() {
         assertEquals(6, add("1,2,3"));
     }
 
     @Test
-    public void shouldReturnSumOfTwoNumbersDelimitedByANewLine(){
+    void shouldReturnSumOfTwoNumbersDelimitedByANewLine(){
         assertEquals(3, add("1\n2"));
     }
 
     @Test
-    public void shouldThrowRuntimeErrorWhenNegativePresent(){
+    void shouldThrowRuntimeErrorWhenNegativePresent(){
         RuntimeException e = assertThrows(RuntimeException.class, () -> add("-1,2,-3"));
         assertEquals("Negatives are not allowed.", e.getMessage());
     }
