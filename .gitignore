@@ -3,7 +3,7 @@
 ##########################
 *.log
 .greeter/
-.StringCalculator/
+#.StringCalculator/
 .BowlingGame/
 
 #PrimeFactors/
