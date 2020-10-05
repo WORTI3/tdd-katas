@@ -2,6 +2,11 @@
 ## General
 ##########################
 *.log
+.greeter/
+.StringCalculator/
+.BowlingGame/
+
+#PrimeFactors/
  
 ##########################
 ## Java
